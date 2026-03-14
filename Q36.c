@@ -18,7 +18,6 @@ int main() {
     scanf("%d", &m);
 
     int front = 0;
-    int rear = n - 1;
     int size = n;
 
     // Perform dequeue operations
