@@ -1,0 +1,31 @@
+// Day 72 - Question 1: First Repeated Character
+// Use hashing to track frequency.
+// Steps: Traverse string, store frequency of characters.
+// First character whose frequency becomes 2 is the answer.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[1000];
+    int freq[26] = {0};
+    int found = 0;
+
+    scanf("%s", s);
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        int idx = s[i] - 'a';
+        freq[idx]++;
+
+        if (freq[idx] == 2) {
+            printf("%c\n", s[i]);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+        printf("-1\n");
+
+    return 0;
+}
